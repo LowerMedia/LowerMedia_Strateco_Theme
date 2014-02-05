@@ -27,7 +27,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<h1 class="entry-title">A Strategy Company</h1>
+			<h1 class="entry-title"><a href="">A Strategy Company</a></h1>
 
 			<section id="paralax-slider-wrap" class="paralax-slider-wrap front-page-section">
 
@@ -41,13 +41,15 @@ get_header(); ?>
 					$args = array( 'post_type' => 'staff_members', 'posts_per_page' => 4 );
 					$loop = new WP_Query( $args );
 					while ( $loop->have_posts() ) : $loop->the_post();
+						$permalink = get_permalink( get_the_ID());
 						echo '<div class="entry-wrap">';
 						echo '<div class="entry-thumb">';
 						the_post_thumbnail();
 						echo '</div>';
 						echo '<div class="entry-title"><h3>';
+						echo '<a href="'.$permalink.'">';
 						the_title();
-						echo '</h3></div>';
+						echo '</a></h3></div>';
 						echo '<div class="entry-content">';
 						the_content();
 						echo '</div></div>';
