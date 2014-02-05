@@ -1,0 +1,16 @@
+/*
+ Theme Name:   Strateco Theme
+ Theme URI:    http://lowermedia.net
+ Description:  Bushwick Child Theme custom edit for Strateco
+ Author:       Pete Lower
+ Author URI:   http://lowermedia.net
+ Template:     bushwick
+ Version:      1.0.0
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  bushwick-child
+*/
+
+@import url("../bushwick/style.css");
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
