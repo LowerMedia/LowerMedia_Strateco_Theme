@@ -15,6 +15,25 @@
 /* =Theme customization starts here
 -------------------------------------------------------------- */
 
+/* ORANGE: EF5316 */
+
+	h1 {
+		color:#EF5316;
+	}
+
+	h2, h3, h4, h5, h6 {
+		color:black;
+	}
+
+	h2, h3 {
+		border-bottom:2px solid #EF5316;
+	}
+
+	.home .site-main {
+		padding:0;
+		width: 100%;
+	}
+
 	.home .widget-area,
 	.home .content-area,
 	.home .site-footer {
@@ -30,9 +49,9 @@
 		height: 850px;
 	}
 
-	.home #site-navigation nav {
+	.home #site-navigation {
 		height: 35px;
-		background-color: rgb(255, 192, 203);
+		background-color: white;
 		padding: 20px 80px;
 		border-top-width: 1px;
 		border-top-style: solid;
@@ -41,4 +60,53 @@
 		border-bottom-style: solid;
 		border-bottom-color: grey;
 		box-shadow: 0px -1px 4px;
+	}
+
+	.home h1 {
+		color: #EF5316;
+	}
+
+	.home h1, .home h2 {
+		text-align:center;
+	}
+
+	.navigation-main a {
+		color:black;
+	}
+
+	.front-page-section {
+		height:500px;
+	}
+
+	.paralax-slider-wrap {
+		background:lightgreen;
+	}
+	
+	.team-wrap{
+		background:pink;
+		padding:10px 95px;
+		height: 600px;
+	}
+
+	.team-wrap .entry-wrap {
+		width: 20%;
+		display: inline-block;
+		padding: 2.5%;
+		text-align: center;
+		color: black;
+	}
+
+	.team-wrap h2 {
+		width:310px;
+		text-transform:uppercase;
+		margin:auto;
+	}
+
+	.team-wrap .entry-thumb {
+		background:#C4CEE4;
+	}
+	
+	.contact-wrap{
+		color:white;
+		background:#EF5316;
 	}

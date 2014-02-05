@@ -27,34 +27,39 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<?php
-				while ( have_posts() ) :
-					the_post();
-			?>
+			<h1 class="entry-title">A Strategy Company</h1>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<section id="paralax-slider-wrap" class="paralax-slider-wrap front-page-section">
 
-				<div class="entry-content">
-					<?php
+			</section>
+			
+			<section id="team-wrap" class="team-wrap front-page-section">
+
+				<h2>Strateco Team</h2>
+				<?php
+
+					$args = array( 'post_type' => 'staff_members', 'posts_per_page' => 4 );
+					$loop = new WP_Query( $args );
+					while ( $loop->have_posts() ) : $loop->the_post();
+						echo '<div class="entry-wrap">';
+						echo '<div class="entry-thumb">';
+						the_post_thumbnail();
+						echo '</div>';
+						echo '<div class="entry-title"><h3>';
+						the_title();
+						echo '</h3></div>';
+						echo '<div class="entry-content">';
 						the_content();
-						wp_link_pages( array(
-							'before' => '<div class="page-links">' . __( 'Pages:', 'bushwick' ),
-							'after'  => '</div>',
-						) );
-					?>
-				</div><!-- .entry-content -->
-				<?php edit_post_link( __( 'Edit', 'bushwick' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
-			</article><!-- #post-## -->
+						echo '</div></div>';
+					endwhile;
+				?>
 
-			<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
+			</section>
+			
+			<section id="contact-wrap" class="contact-wrap front-page-section">
 
-				endwhile; // End of the loop.
-			?>
+			</section>
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
