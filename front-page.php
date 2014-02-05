@@ -9,15 +9,25 @@
  *
  * @package Bushwick
  */
-echo "CUSTOM FRONT PAGE";
 get_header(); ?>
+
+
+
+	<header id="one-page-masthead" class="one-page-site-header" role="banner" style="background-image:url(<?php header_image(); ?>);">
+		<div class="site-branding">
+			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+		</div>
+	</header><!-- #masthead -->
+
+	<?php
+		get_template_part( 'navigation' );
+	?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 			<?php
-				get_template_part( 'navigation' );
-
 				while ( have_posts() ) :
 					the_post();
 			?>

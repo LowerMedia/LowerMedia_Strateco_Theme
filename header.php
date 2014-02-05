@@ -19,5 +19,7 @@
 <body <?php body_class(); ?>>
 
 <?php
+if(!is_front_page()){
 get_template_part( 'sidebar', is_single() ? 'single' : 'index' );
 get_sidebar();
+}
