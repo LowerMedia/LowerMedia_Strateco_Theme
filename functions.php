@@ -51,13 +51,58 @@ add_action( 'init', 'codex_custom_init' );
 */
 
 function setup_theme_admin_menus() {
-    add_submenu_page('themes.php', 
+    add_menu_page('Theme settings', 'Example theme', 'manage_options', 
+        'tut_theme_settings', 'theme_settings_page');
+         
+    add_submenu_page('tut_theme_settings', 
         'Front Page Elements', 'Front Page', 'manage_options', 
-        'front-page-elements', 'theme_front_page_settings'); 
+        'tut_theme_settings', 'theme_front_page_settings'); 
 }
  
 function theme_front_page_settings() {
-    echo "Hello, world!";
+    // Check that the user is allowed to update options
+    if (!current_user_can('manage_options')) {
+        wp_die('You do not have sufficient permissions to access this page.');
+    }
+    echo "<h1>Strateco Cusom Theme!</h1>";
+    
+    ?>
+    <div class="wrap">
+        <?php screen_icon('themes'); ?> <h2>Front page elements</h2>
+ 
+        <form method="POST" action="">
+            <table class="form-table">
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="num_elements">
+                            Number of elements on a row:
+                        </label> 
+                    </th>
+                    <td>
+                        <input type="text" name="num_elements" size="25" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <?php $posts = get_posts(); ?>
+ 
+    <li class="front-page-element" id="front-page-element-placeholder">
+        <label for="element-page-id">Featured post:</label>
+        <select name="element-page-id">
+            <?php foreach ($posts as $post) : ?>
+                <option value="<?php echo $post-<ID; ?>">
+                    <?php echo $post-<post_title; ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <a href="#">Remove</a>
+    </li>
+    <?php
+}
+
+function theme_settings_page() {
+    echo "Settings page";
 }
 
 add_action("admin_menu", "setup_theme_admin_menus");
