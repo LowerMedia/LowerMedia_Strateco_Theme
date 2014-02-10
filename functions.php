@@ -50,32 +50,6 @@ add_action( 'init', 'codex_custom_init' );
 #
 */
 
-function setup_theme_admin_menus() {
-    add_menu_page('Theme settings', 'LowerMedia theme', 'manage_options', 
-        'lowermedia_theme_settings', 'theme_settings_page');
-         
-    add_submenu_page('lowermedia_theme_settings', 
-        'Front Page Elements', 'Front Page', 'manage_options', 
-        'lowermedia_theme_settings', 'theme_front_page_settings'); 
-}
- 
-function theme_front_page_settings() {
-    // Check that the user is allowed to update options
-    if (!current_user_can('manage_options')) {
-        wp_die('You do not have sufficient permissions to access this page.');
-    }
-    echo "<h1>Strateco Cusom Theme!</h1>";
-    
-}
-
-function theme_settings_page() {
-    echo "Settings page";
-}
-
-add_action("admin_menu", "setup_theme_admin_menus");
-
-
-
 require_once ( get_stylesheet_directory() . '/theme-options.php' );
 
 function sa_layout_view() {

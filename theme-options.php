@@ -3,6 +3,7 @@
 // Default options values
 $sa_options = array(
 	'contact_form_shortcode'=>'',
+	'services_shortcode'=>'',
 	'footer_copyright' => '&copy; ' . date('Y') . ' ' . get_bloginfo('name'),
 	'intro_text' => '',
 	'featured_cat' => '',
@@ -81,7 +82,13 @@ function sa_theme_options_page() {
 
 	<table class="form-table"><!-- Grab a hot cup of coffee, yes we're using tables! -->
 
-		<tr valign="top"><th scope="row"><label for="contact_form_shortcode">Contact Area Shortcode</label></th>
+	<tr valign="top"><th scope="row"><label for="services_shortcode">Services Area Shortcode</label></th>
+	<td>
+	<input id="services_shortcode" name="sa_options[services_shortcode]" type="text" value="<?php  esc_attr_e($settings['services_shortcode']); ?>" />
+	</td>
+	</tr>
+
+	<tr valign="top"><th scope="row"><label for="contact_form_shortcode">Contact Area Shortcode</label></th>
 	<td>
 	<input id="contact_form_shortcode" name="sa_options[contact_form_shortcode]" type="text" value="<?php  esc_attr_e($settings['contact_form_shortcode']); ?>" />
 	</td>
