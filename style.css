@@ -75,13 +75,23 @@
 	}
 
 	.front-page-section {
-		height:500px;
+		height:600px;
 	}
 
 	.paralax-slider-wrap {
 		background:lightgreen;
 	}
 	
+	.inner-section-wrap {
+		padding: 0px 30px;
+	}
+
+	.form-inputs-left,  .form-inputs-right {
+	width: 40%;
+	float: left;
+	padding: 0 5%;
+	}
+
 	.team-wrap{
 		background:white;
 		padding:10px 95px;
@@ -124,3 +134,10 @@
 	}
 
 	.site-branding p {text-align:center;}
+
+	footer .site-info p {
+		float: left;
+		width: 50%;
+	}
+
+	.company-footer-cp {text-align:right;}

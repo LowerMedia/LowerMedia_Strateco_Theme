@@ -30,11 +30,14 @@ get_header(); ?>
 			<h1 class="entry-title"><a href="">A Strategy Company</a></h1>
 
 			<section id="paralax-slider-wrap" class="paralax-slider-wrap front-page-section">
+				
+				<div class='inner-section-wrap'>
 				<?php 
 					global $sa_options;
 					$sa_settings = get_option( 'sa_options', $sa_options ); 
 				 	echo do_shortcode( str_replace('\"', '"', $sa_settings['services_shortcode']));
 				?>
+				</div>
 			</section>
 			
 			<section id="team-wrap" class="team-wrap front-page-section">
