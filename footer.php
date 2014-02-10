@@ -17,9 +17,9 @@
 			<p class='company-footer-cp'>
 				<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="generator">
 				<?php 
-					global $sa_options;
-					$sa_settings = get_option( 'sa_options', $sa_options ); 
-					echo $sa_settings['footer_copyright']; 
+					global $lm_options;
+					$lm_settings = get_option( 'lm_options', $lm_options ); 
+					echo $lm_settings['footer_copyright']; 
 				?>
 				</a>	
 			</p>

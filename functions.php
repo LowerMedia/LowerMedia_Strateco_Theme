@@ -52,9 +52,9 @@ add_action( 'init', 'codex_custom_init' );
 
 require_once ( get_stylesheet_directory() . '/theme-options.php' );
 
-function sa_layout_view() {
-    global $sa_options;
-    $settings = get_option( 'sa_options', $sa_options );
+function lm_layout_view() {
+    global $lm_options;
+    $settings = get_option( 'lm_options', $lm_options );
     if( $settings['layout_view'] == 'fluid' ) : ?>
         <style type="text/css">
         #wrapper {
@@ -69,4 +69,4 @@ function sa_layout_view() {
     <?php endif;
 }
 
-add_action( 'wp_head', 'sa_layout_view' );
+add_action( 'wp_head', 'lm_layout_view' );

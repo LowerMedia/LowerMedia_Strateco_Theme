@@ -28,23 +28,23 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 				<?php
-                	global $sa_options;
-					$sa_settings = get_option( 'sa_options', $sa_options );
+                	global $lm_options;
+					$lm_settings = get_option( 'lm_options', $lm_options );
 				?>
                 
                 <section id="intro-wrap">
 
-					<?php if( $sa_settings['intro_title'] != '' ) { ?>
-						<h1 class="entry-title"><?php echo $sa_settings['intro_title'] ?></h1>
+					<?php if( $lm_settings['intro_title'] != '' ) { ?>
+						<h1 class="entry-title"><?php echo $lm_settings['intro_title'] ?></h1>
 					<?php } else {?>
 						<h1 class="entry-title"><a href="/">A Strategy Company</a></h1>
 					<?php } ?>
 
-	                <?php if( $sa_settings['intro_text'] != '' ) : ?>
+	                <?php if( $lm_settings['intro_text'] != '' ) : ?>
 					
 	                <div class="intro inner-section-wrap">
 						<p>
-							<?php echo $sa_settings['intro_text']; ?>
+							<?php echo $lm_settings['intro_text']; ?>
 						</p>
 	                </div>
 
@@ -56,8 +56,8 @@ get_header(); ?>
 				
 				<div class='inner-section-wrap'>
 				<?php 
-					$sa_settings = get_option( 'sa_options', $sa_options ); 
-				 	echo do_shortcode( str_replace('\"', '"', $sa_settings['services_shortcode']));
+					$lm_settings = get_option( 'lm_options', $lm_options ); 
+				 	echo do_shortcode( str_replace('\"', '"', $lm_settings['services_shortcode']));
 				?>
 				</div>
 			</section>
@@ -90,8 +90,8 @@ get_header(); ?>
 			<section id="contact-wrap" class="contact-wrap front-page-section">
 				<div class='inner-section-wrap'>
 					<?php 
-						$sa_settings = get_option( 'sa_options', $sa_options ); 
-				 		echo do_shortcode( str_replace('\"', '"', $sa_settings['contact_form_shortcode']));
+						$lm_settings = get_option( 'lm_options', $lm_options ); 
+				 		echo do_shortcode( str_replace('\"', '"', $lm_settings['contact_form_shortcode']));
 					?>
 				</div>
 			</section>
