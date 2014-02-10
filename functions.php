@@ -54,7 +54,7 @@ function setup_theme_admin_menus() {
     add_menu_page('Theme settings', 'LowerMedia theme', 'manage_options', 
         'lowermedia_theme_settings', 'theme_settings_page');
          
-    add_submenu_page('tut_theme_settings', 
+    add_submenu_page('lowermedia_theme_settings', 
         'Front Page Elements', 'Front Page', 'manage_options', 
         'lowermedia_theme_settings', 'theme_front_page_settings'); 
 }
@@ -73,3 +73,26 @@ function theme_settings_page() {
 }
 
 add_action("admin_menu", "setup_theme_admin_menus");
+
+
+
+require_once ( get_stylesheet_directory() . '/theme-options.php' );
+
+function sa_layout_view() {
+    global $sa_options;
+    $settings = get_option( 'sa_options', $sa_options );
+    if( $settings['layout_view'] == 'fluid' ) : ?>
+        <style type="text/css">
+        #wrapper {
+            width: 94%;
+            max-width:1140px;
+            min-width:940px;
+        }
+        #branding, #branding img, #access, #main, #colophon {
+            width:100%;
+        }
+        </style>
+    <?php endif;
+}
+
+add_action( 'wp_head', 'sa_layout_view' );

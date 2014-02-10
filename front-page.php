@@ -59,7 +59,11 @@ get_header(); ?>
 			</section>
 			
 			<section id="contact-wrap" class="contact-wrap front-page-section">
-				
+				<?php 
+					global $sa_options;
+					$sa_settings = get_option( 'sa_options', $sa_options ); 
+				 	echo do_shortcode( str_replace('\"', '"', $sa_settings['contact_form_shortcode']));
+				?>
 			</section>
 
 
