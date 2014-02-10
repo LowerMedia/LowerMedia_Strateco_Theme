@@ -3,6 +3,7 @@
 // Default options values
 $sa_options = array(
 	'contact_form_shortcode'=>'',
+	'intro_title'=>'',
 	'services_shortcode'=>'',
 	'footer_copyright' => '&copy; ' . date('Y') . ' ' . get_bloginfo('name'),
 	'intro_text' => '',
@@ -100,11 +101,22 @@ function sa_theme_options_page() {
 	</td>
 	</tr>
 
+	<tr valign="top"><th scope="row"><label for="intro_title">Intro Title</label></th>
+	<td>
+	<input id="intro_title" name="sa_options[intro_title]" type="text" ><?php echo stripslashes($settings['intro_title']); ?></input>
+	</td>
+	</tr>
+
 	<tr valign="top"><th scope="row"><label for="intro_text">Intro Text</label></th>
 	<td>
 	<textarea id="intro_text" name="sa_options[intro_text]" rows="5" cols="30"><?php echo stripslashes($settings['intro_text']); ?></textarea>
 	</td>
 	</tr>
+
+
+
+
+
 
 	<tr valign="top"><th scope="row"><label for="featured_cat">Featured Category</label></th>
 	<td>
@@ -155,13 +167,23 @@ function sa_validate_options( $input ) {
 	$settings = get_option( 'sa_options', $sa_options );
 	
 	// We strip all tags from the text field, to avoid vulnerablilties like XSS
+	$input['services_shortcode'] = wp_filter_nohtml_kses( $input['services_shortcode'] );
+
+	// We strip all tags from the text field, to avoid vulnerablilties like XSS
 	$input['contact_form_shortcode'] = wp_filter_nohtml_kses( $input['contact_form_shortcode'] );
 
 	// We strip all tags from the text field, to avoid vulnerablilties like XSS
 	$input['footer_copyright'] = wp_filter_nohtml_kses( $input['footer_copyright'] );
+
+	// We strip all tags from the text field, to avoid vulnerablilties like XSS
+	$input['intro_title'] = wp_filter_post_kses( $input['intro_title'] );
 	
 	// We strip all tags from the text field, to avoid vulnerablilties like XSS
 	$input['intro_text'] = wp_filter_post_kses( $input['intro_text'] );
+
+
+
+
 	
 	// We select the previous value of the field, to restore it in case an invalid entry has been given
 	$prev = $settings['featured_cat'];
@@ -180,6 +202,9 @@ function sa_validate_options( $input ) {
 		$input['author_credits'] = null;
 	// We verify if the input is a boolean value
 	$input['author_credits'] = ( $input['author_credits'] == 1 ? 1 : 0 );
+
+
+
 	
 	return $input;
 }

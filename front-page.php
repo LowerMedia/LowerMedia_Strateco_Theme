@@ -27,13 +27,35 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<h1 class="entry-title"><a href="">A Strategy Company</a></h1>
+				<?php
+                	global $sa_options;
+					$sa_settings = get_option( 'sa_options', $sa_options );
+				?>
+                
+                <section id="intro-wrap">
+
+					<?php if( $sa_settings['intro_title'] != '' ) { ?>
+						<h1 class="entry-title"><?php echo $sa_settings['intro_title'] ?></h1>
+					<?php } else {?>
+						<h1 class="entry-title"><a href="/">A Strategy Company</a></h1>
+					<?php } ?>
+
+	                <?php if( $sa_settings['intro_text'] != '' ) : ?>
+					
+	                <div class="intro inner-section-wrap">
+						<p>
+							<?php echo $sa_settings['intro_text']; ?>
+						</p>
+	                </div>
+
+	                <?php endif; ?>
+	            </section>
+			
 
 			<section id="paralax-slider-wrap" class="paralax-slider-wrap front-page-section">
 				
 				<div class='inner-section-wrap'>
 				<?php 
-					global $sa_options;
 					$sa_settings = get_option( 'sa_options', $sa_options ); 
 				 	echo do_shortcode( str_replace('\"', '"', $sa_settings['services_shortcode']));
 				?>
@@ -41,7 +63,7 @@ get_header(); ?>
 			</section>
 			
 			<section id="team-wrap" class="team-wrap front-page-section">
-
+				<div class='inner-section-wrap'>
 				<h2>Strateco Team</h2>
 				<?php
 
@@ -62,15 +84,16 @@ get_header(); ?>
 						echo '</div></div>';
 					endwhile;
 				?>
-
+			</div>
 			</section>
 			
 			<section id="contact-wrap" class="contact-wrap front-page-section">
-				<?php 
-					global $sa_options;
-					$sa_settings = get_option( 'sa_options', $sa_options ); 
-				 	echo do_shortcode( str_replace('\"', '"', $sa_settings['contact_form_shortcode']));
-				?>
+				<div class='inner-section-wrap'>
+					<?php 
+						$sa_settings = get_option( 'sa_options', $sa_options ); 
+				 		echo do_shortcode( str_replace('\"', '"', $sa_settings['contact_form_shortcode']));
+					?>
+				</div>
 			</section>
 
 
