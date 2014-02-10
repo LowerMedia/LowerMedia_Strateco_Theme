@@ -1,5 +1,10 @@
 <?php
 
+/*
+#
+#   ADD STAFF MEMBER CONTENT TYPE (CUSTOM POST TYPE)
+#
+*/
 
 function codex_custom_init() {
   $labels = array(
@@ -38,3 +43,21 @@ function codex_custom_init() {
   register_post_type( 'staff_members', $args );
 }
 add_action( 'init', 'codex_custom_init' );
+
+/*
+#
+#   CREATE ADMIN PAGE FOR THEME SETTINGS
+#
+*/
+
+function setup_theme_admin_menus() {
+    add_submenu_page('themes.php', 
+        'Front Page Elements', 'Front Page', 'manage_options', 
+        'front-page-elements', 'theme_front_page_settings'); 
+}
+ 
+function theme_front_page_settings() {
+    echo "Hello, world!";
+}
+
+add_action("admin_menu", "setup_theme_admin_menus");
