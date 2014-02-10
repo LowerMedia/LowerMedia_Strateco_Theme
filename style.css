@@ -114,3 +114,11 @@
 		color:white;
 		background:#EF5316;
 	}
+
+	.site-branding {
+		left: 0;
+		max-width: 100%;
+		width: 100%;
+		position: relative;
+		bottom: 0;
+	}
