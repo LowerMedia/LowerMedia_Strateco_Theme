@@ -27,29 +27,29 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-				<?php
-                	global $lm_options;
-					$lm_settings = get_option( 'lm_options', $lm_options );
-				?>
-                
-                <section id="intro-wrap">
+			<?php
+            	global $lm_options;
+				$lm_settings = get_option( 'lm_options', $lm_options );
+			?>
+            
+            <section id="intro-wrap" class="intro-wrap front-page-section">
 
-					<?php if( $lm_settings['intro_title'] != '' ) { ?>
-						<h1 class="entry-title"><?php echo $lm_settings['intro_title'] ?></h1>
-					<?php } else {?>
-						<h1 class="entry-title"><a href="/">A Strategy Company</a></h1>
-					<?php } ?>
+				<?php if( $lm_settings['intro_title'] != '' ) { ?>
+					<h1 class="entry-title"><?php echo $lm_settings['intro_title'] ?></h1>
+				<?php } else {?>
+					<h1 class="entry-title"><a href="/">A Strategy Company</a></h1>
+				<?php } ?>
 
-	                <?php if( $lm_settings['intro_text'] != '' ) : ?>
-					
-	                <div class="intro inner-section-wrap">
-						<p>
-							<?php echo $lm_settings['intro_text']; ?>
-						</p>
-	                </div>
+                <?php if( $lm_settings['intro_text'] != '' ) : ?>
+				
+                <div class="intro inner-section-wrap">
+					<p>
+						<?php echo $lm_settings['intro_text']; ?>
+					</p>
+                </div>
 
-	                <?php endif; ?>
-	            </section>
+                <?php endif; ?>
+            </section>
 			
 
 			<section id="paralax-slider-wrap" class="paralax-slider-wrap front-page-section">
