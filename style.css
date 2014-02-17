@@ -75,7 +75,7 @@
 	}
 
 	.front-page-section {
-		height:600px;
+		min-height:200px;
 		background:white;
 	}
 
