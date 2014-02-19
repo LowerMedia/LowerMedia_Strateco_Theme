@@ -70,3 +70,14 @@ function lm_layout_view() {
 }
 
 add_action( 'wp_head', 'lm_layout_view' );
+
+/*
+#
+#   REGISTER SOCIAL MEDIA MENU
+#
+*/
+
+function register_social_media_menu() {
+  register_nav_menu('social-media-menu',__( 'Social Media Menu' ));
+}
+add_action( 'init', 'register_social_media_menu' );

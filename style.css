@@ -141,3 +141,15 @@
 	}
 
 	.company-footer-cp {text-align:right;}
+	
+	.menu-primary-navigation-container {
+		width: 40%;
+		float: left;
+	}
+	
+	.menu-social-media-navigation-container {
+		width: 40%;
+		float: right;
+	}
+	
+	.home .navigation-main .genericon {display:none;}
