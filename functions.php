@@ -81,3 +81,19 @@ function register_social_media_menu() {
   register_nav_menu('social-media-menu',__( 'Social Media Menu' ));
 }
 add_action( 'init', 'register_social_media_menu' );
+
+/*
+#
+#   REGISTER LOWERMEDIA.JS
+#
+*/
+
+function lowermedia_scripts() {
+    wp_enqueue_script(
+        'custom-script',
+        get_stylesheet_directory_uri() . '/lowermedia.js',
+        array( 'jquery' )
+    );
+}
+
+add_action( 'wp_enqueue_scripts', 'lowermedia_scripts' );
