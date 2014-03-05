@@ -147,7 +147,7 @@
 		float: left;
 	}
 
-	.team-wrap{
+	.team-wrap, .contact-wrap {
 		background:white;
 		padding:10px 95px;
 		height: 600px;
