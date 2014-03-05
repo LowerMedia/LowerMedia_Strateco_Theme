@@ -17,6 +17,8 @@
 
 /* ORANGE: EF5316 */
 
+/*----------H#----------*/
+
 	h1 {
 		color:#EF5316;
 	}
@@ -27,6 +29,24 @@
 
 	h2, h3 {
 		border-bottom:2px solid #EF5316;
+	}
+
+	.home h1 {
+		color: #EF5316;
+	}
+
+	.home h1, .home h2 {
+		text-align:center;
+	}
+
+/*----------HTML/BODY/SITE----------*/
+
+	html,body {
+	    width: 100%;
+	    height: 100%;
+	    margin: 0px;
+	    padding: 0px;
+	    overflow-x: hidden; 
 	}
 
 	.home .site-main {
@@ -42,12 +62,36 @@
 		width: 100%;
 	}
 
+	.front-page-section {
+		min-height:200px;
+		background:white;
+	}
+
+/*----------HEADER----------*/
+
 	.one-page-site-header {
 		background-repeat: no-repeat;
 		background-size:100%;
 		width: 100%;
-		height: 850px;
+		max-height: 720px;
 	}
+
+	.home .one-page-site-header {
+		position:relative;
+		z-index: -1;
+	}
+	
+	.home .site-branding {
+		position: fixed;
+		top:0;
+		max-height:200px;		
+		z-index: -1;
+		margin-left:14%;
+	}
+
+
+/*----------NAVIGATION----------*/
+
 
 	.home #site-navigation {
 		height: 35px;
@@ -62,21 +106,32 @@
 		box-shadow: 0px -1px 4px;
 	}
 
-	.home h1 {
-		color: #EF5316;
-	}
 
-	.home h1, .home h2 {
-		text-align:center;
-	}
 
 	.navigation-main a {
 		color:black;
 	}
 
-	.front-page-section {
-		min-height:200px;
-		background:white;
+
+	.menu-primary-navigation-container {
+		width: 40%;
+		float: left;
+	}
+	
+	.menu-social-media-navigation-container {
+		width: 40%;
+		float: right;
+	}
+	
+	.home .navigation-main .genericon {display:none;}
+
+
+
+/*----------CONTENT----------*/
+
+
+	#content-out-wrap {
+		background: white;
 	}
 
 	.paralax-slider-wrap {
@@ -88,8 +143,8 @@
 	}
 
 	.form-inputs-left,  .form-inputs-right {
-	width: 50%;
-	float: left;
+		width: 50%;
+		float: left;
 	}
 
 	.team-wrap{
@@ -125,31 +180,19 @@
 		background:#EF5316;
 	}
 
-	.site-branding {
-		left: 0;
-		max-width: 100%;
-		width: 100%;
-		position: relative;
-		bottom: 0;
+	.entry-content {
+		text-align:justify;
 	}
 
-	.site-branding p {text-align:center;}
+
+
+	
+
+/*----------FOOTER----------*/
 
 	footer .site-info p {
-		float: left;
-		width: 50%;
-	}
+			float: left;
+			width: 50%;
+		}
 
 	.company-footer-cp {text-align:right;}
-	
-	.menu-primary-navigation-container {
-		width: 40%;
-		float: left;
-	}
-	
-	.menu-social-media-navigation-container {
-		width: 40%;
-		float: right;
-	}
-	
-	.home .navigation-main .genericon {display:none;}
