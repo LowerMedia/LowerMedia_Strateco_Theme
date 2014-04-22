@@ -77,7 +77,9 @@ get_header(); ?>
 							the_post_thumbnail();
 							echo '</div><div class="entry-title"><h3><a href="'.$permalink.'">';
 							the_title();
-							echo '</a></h3></div></div>';
+							echo '</a></h3></div><div class="entry-content">';
+							the_exerpt();
+							echo '</div></div>';
 						endwhile;
 					?>
 				</div>
