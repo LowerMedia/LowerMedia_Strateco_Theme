@@ -78,7 +78,7 @@ get_header(); ?>
 							echo '</div><div class="entry-title"><h3><a href="'.$permalink.'">';
 							the_title();
 							echo '</a></h3></div><div class="entry-content">';
-							echo get_post_meta(get_the_ID(), 'staff_members', true);
+							echo get_post_meta(get_the_ID(), 'lowermedia_staff_title_link', true);
 							echo '</div></div>';
 						endwhile;
 					?>
