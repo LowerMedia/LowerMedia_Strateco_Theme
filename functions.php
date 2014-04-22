@@ -121,7 +121,7 @@ function lowermedia_add_staff_title_meta_boxes() {
         esc_html__( 'Staff Title', 'example' ),      // Title
         'lowermedia_staff_title_meta_box',       // Callback function
         'staff_members',                    // Admin page (or post type)
-        'normal',                   // Context ('side', 'advanced', 'normal')
+        'side',                   // Context ('side', 'advanced', 'normal')
         'high'                  // Priority ('high', 'core', 'default' or 'low')
     );
 }
