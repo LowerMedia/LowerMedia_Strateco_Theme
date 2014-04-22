@@ -78,7 +78,7 @@ get_header(); ?>
 							echo '</div><div class="entry-title"><h3><a href="'.$permalink.'">';
 							the_title();
 							echo '</a></h3></div><div class="entry-content">';
-							the_exerpt();
+							the_excerpt();
 							echo '</div></div>';
 						endwhile;
 					?>
