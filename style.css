@@ -38,15 +38,29 @@
 	.home h1, .home h2 {
 		text-align:center;
 	}
+	
+	.entry-title a:hover {
+		color: black;
+		text-decoration: underline;
+	}
+		
+	a {
+		color: #EF5316;
+	}
+	
+	.single .entry-title,
+	.page .entry-title,
+	.site-header .post-navigation a {color: #EF5316;}
 
 /*----------HTML/BODY/SITE----------*/
 
 	html,body {
 	    width: 100%;
-	    height: 100%;
+	    height: auto;
 	    margin: 0px;
 	    padding: 0px;
 	    overflow-x: hidden; 
+	    overflow-y: auto; 
 	}
 
 	.home .site-main {
@@ -66,6 +80,8 @@
 		min-height:200px;
 		background:white;
 	}
+	
+	.page .genericon {display:none;}
 
 /*----------HEADER----------*/
 
@@ -106,26 +122,59 @@
 		box-shadow: 0px -1px 4px;
 	}
 
+	.menu-primary-navigation {}
 
+	.navigation-main li:hover > a {
+			border-bottom: 5px solid #EF5316;
+			color: #EF5316;
+		}
 
 	.navigation-main a {
 		color:black;
 	}
 
 
-	.menu-primary-navigation-container {
+	.home .menu-primary-navigation-container {
 		width: 40%;
 		float: left;
 	}
 	
+	.page .menu-primary-navigation-container {
+		width: 70%;
+		float: left;
+	}
+	
 	.menu-social-media-navigation-container {
-		width: 40%;
+		width: 30%;
 		float: right;
 	}
 	
 	.home .navigation-main .genericon {display:none;}
 
-
+	.menu-social-media-navigation-container .menu .menu-item {margin-right:.5em}
+	
+	.menu-social-media-navigation-container .menu .menu-item a {
+			background-image: url('http://stratecollc.com/wp-content/blog.dir/sites/34/2014/03/socialmedia_orange_is_hover.png');
+			text-indent: -9999px;
+			height: 27px;
+			width: 32px;
+			position: relative;
+			top: -5px;
+		}
+	
+	.menu-item-50 a {background-position: 192px 128px;}
+	.menu-item-51 a {background-position: 256px 128px;}
+	.menu-item-52 a {background-position: 224px 128px;}
+	
+	.menu-item-50 a:hover,
+	.menu-item-51 a:hover,
+	.menu-item-52 a:hover {
+			text-decoration:none;
+			background-position-y: 96px;
+		}
+		
+	.menu-social-media-navigation-container li:hover > a {border-color: rgba(0, 0, 0, 0);}
+	
 
 /*----------CONTENT----------*/
 
