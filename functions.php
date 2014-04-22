@@ -118,7 +118,7 @@ function lowermedia_add_staff_title_meta_boxes() {
 
     add_meta_box(
         'lowermedia-staff-title',            // Unique ID
-        esc_html__( 'Press Article Link', 'example' ),      // Title
+        esc_html__( 'Staff Title', 'example' ),      // Title
         'lowermedia_staff_title_meta_box',       // Callback function
         'staff_members',                    // Admin page (or post type)
         'normal',                   // Context ('side', 'advanced', 'normal')
