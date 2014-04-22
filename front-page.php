@@ -66,7 +66,7 @@ get_header(); ?>
 				
 				<section id="team-wrap" class="team-wrap front-page-section">
 					<div class='inner-section-wrap'>
-					<h2>Strateco Team</h2>
+					<h2><a href='/staff_members'>Strateco Team</a></h2>
 					<?php
 
 						$args = array( 'post_type' => 'staff_members', 'posts_per_page' => 4 );
