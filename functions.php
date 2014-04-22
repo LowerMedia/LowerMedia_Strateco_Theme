@@ -120,7 +120,7 @@ function lowermedia_add_staff_title_meta_boxes() {
         'lowermedia-staff-title',            // Unique ID
         esc_html__( 'Press Article Link', 'example' ),      // Title
         'lowermedia_staff_title_meta_box',       // Callback function
-        'press',                    // Admin page (or post type)
+        'staff_members',                    // Admin page (or post type)
         'normal',                   // Context ('side', 'advanced', 'normal')
         'high'                  // Priority ('high', 'core', 'default' or 'low')
     );
@@ -133,7 +133,7 @@ function lowermedia_staff_title_meta_box( $object, $box ) { ?>
 
     <p>
         <label for="lowermedia-staff-title">
-            <?php _e( "Add Press Article Link", 'example' ); ?>
+            <?php _e( "Add Staff Title", 'example' ); ?>
         </label>
         <br />
         <br />
@@ -170,8 +170,6 @@ function lowermedia_save_staff_title_link_meta( $post_id, $post ) {
         return $post_id;
 
     /* Get the posted data and sanitize it for use as an HTML class. */
-    //$new_meta_value = 'http://vimeo.com/';
-    //$new_meta_value = ( isset( $_POST['lowermedia-press-link'] ) ? sanitize_html_class( $_POST['lowermedia-press-link'] ) : '' );
     $new_meta_value = ( isset( $_POST['lowermedia-staff-title'] ) ?  $_POST['lowermedia-staff-title'] : '' );
 
     /* Get the meta key. */
