@@ -73,13 +73,21 @@ get_header(); ?>
 						$loop = new WP_Query( $args );
 						while ( $loop->have_posts() ) : $loop->the_post();
 							$permalink = get_permalink( get_the_ID());
-							echo '<div class="entry-wrap"><div class="entry-thumb">';
+							echo '<div class="entry-wrap">';
+							echo'<div class="entry-thumb">';
 							the_post_thumbnail();
-							echo '</div><div class="entry-title"><h3><a href="'.$permalink.'">';
+							echo '</div>';
+							echo'<div class="entry-thumb-mobile">';
+							the_post_thumbnail('thumbnail');
+							echo '</div>';
+							echo'<div class="title-content-wrap"><div class="entry-title">
+							<h3><a href="'.$permalink.'">';
 							the_title();
-							echo '</a></h3></div><div class="entry-content">';
+							echo '</a></h3>
+							</div>';
+							echo'<div class="entry-content">';
 							echo get_post_meta(get_the_ID(), 'lowermedia_staff_title_link', true);
-							echo '</div></div>';
+							echo '</div></div></div>';
 						endwhile;
 					?>
 				</div>
