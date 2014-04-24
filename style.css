@@ -250,3 +250,9 @@
 		}
 
 	.company-footer-cp {text-align:right;}
+
+/*----------MEDIA QUERIES----------*/
+
+@media all and  (max-width: 1055px) and (min-width: 300px) {
+	
+}
